@@ -1,90 +1,94 @@
-
 .container11 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    height: 100vh;
-    background: linear-gradient(135deg, #f0f8ff, #ffe6e6);
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  }
-  
-  .heading {
-    font-size: 2rem;
-    margin-bottom: 30px;
-    color: #333;
-    text-align: center;
-  }
-  
-  .SignForm {
-    display: flex;
-    flex-direction: column;
-    background-color: white;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
-    width: 350px;
-    gap: 15px;
-  }
-  
-  .SignForm label {
-    font-weight: 600;
-    color: #555;
-  }
-  
-  .SignForm input,
-  .SignForm select {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    outline: none;
-    transition: border-color 0.3s;
-  }
-  
-  .SignForm input:focus,
-  .SignForm select:focus {
-    border-color: #007bff;
-  }
-  
-  .buttonGroup {
-    display: flex;
-    justify-content: space-between;
-    gap: 10px;
-  }
-  
-  .primaryBtn, .secondaryBtn {
-    padding: 10px;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    font-weight: bold;
-  }
-  
-  .primaryBtn {
-    background-color: #28a745;
-    color: white;
-  }
-  
-  .secondaryBtn {
-    background-color: #007bff;
-    color: white;
-  }
-  
-  .primaryBtn:hover {
-    background-color: #218838;
-  }
-  
-  .secondaryBtn:hover {
-    background-color: #0069d9;
-  }
-  .logoutButton{
-     padding: 10px;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    font-weight: bold;
-      background-color: #28a745;
-    color: white;
-  }
-  .logoutButton:hover{
-    background-color: red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  background: linear-gradient(135deg, #f0f8ff, #ffe6e6);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.heading {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #333;
+  text-align: center;
+}
+
+.SignForm {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
+  width: 350px;
+  gap: 15px;
+}
+
+.SignForm label {
+  font-weight: 600;
+  color: #555;
+}
+
+.SignForm input,
+.SignForm select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.SignForm input:focus,
+.SignForm select:focus {
+  border-color: #007bff;
+}
+
+.buttonGroup {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.primaryBtn,
+.secondaryBtn {
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.primaryBtn {
+  background-color: #28a745;
+  color: white;
+}
+
+.secondaryBtn {
+  background-color: #007bff;
+  color: white;
+}
+
+.primaryBtn:hover {
+  background-color: #218838;
+}
+
+.secondaryBtn:hover {
+  background-color: #0069d9;
+}
+
+.logoutButton {
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  background-color: #28a745;
+  color: white;
+}
+
+.logoutButton:hover {
+  background-color: red;
+}
+
