@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 .main {
   font-family: 'Segoe UI', sans-serif;
   background-color: #f9f9f9;
@@ -149,28 +149,7 @@
   margin-bottom: 0.5rem;
 }
 
-=======
-.main {
-  font-family: 'Segoe UI', sans-serif;
-  background-color: #f9f9f9;
-  overflow-x: hidden;
-}
 
-.hero {
-  background: linear-gradient(to right, rgba(0,0,0,0.7), rgba(0,0,0,0.1)),
-              url("https://th.bing.com/th/id/OIP.AEfh0xhVHwt_uN9I9mML9gHaFg?w=1920&h=1429&rs=1&pid=ImgDetMain");
-  background-size: cover;
-  background-position: center;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.heroContent {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   padding: 4rem;
   height: 100%;
 }
@@ -300,4 +279,3 @@
   margin-bottom: 0.5rem;
 }
 
->>>>>>> b2923ed75085a17916702d9fd8ef0d4092383c4b
