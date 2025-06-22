@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 import React, { useState, useEffect } from 'react';
 import { Box, Typography, Rating, TextField, Button, Alert } from '@mui/material';
 import { Link } from "react-router-dom"; // ✅ correct import
