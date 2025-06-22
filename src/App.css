@@ -1,0 +1,28 @@
+.container {
+  width: 1000px;
+  overflow: hidden;
+  border: 2px solid black;
+  margin-top: 20px;
+}
+
+.first {
+  display: flex;
+  animation: blo 6s linear infinite;
+ width:max-content;
+}
+
+
+@keyframes blo {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
