@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import ProductCard from './Card';
 import { useNavigate } from 'react-router-dom';
 import style from "./Menu.module.css";
-import { MenuList as menu } from './data/data';
+import { MenuList as menu } from '../data/data';
 import Header from './Header';
 import Footer from './Footer';
 import { Button } from '@mui/material';
