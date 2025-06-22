@@ -7,8 +7,8 @@ import Footer from './Footer';
 import Menu from './Menu';
 import About from './About';
 import Feedback from './Feedback';
-import Memocount from './Memocount';
-import Todos from './Todos';
+
+
 import { Provider } from 'react-redux';
 import store from './store';
 import Admin from './Admin';
