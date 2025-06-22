@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 .home{
     display:flex;
     justify-content: center;
@@ -11,18 +11,4 @@
     border:2px solid black;
     border-radius:30px;
     margin:15px;
-=======
-.home{
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    height:100vh;
-}
-.box5{
-    height:200px;
-    width:200px;
-    border:2px solid black;
-    border-radius:30px;
-    margin:15px;
->>>>>>> b2923ed75085a17916702d9fd8ef0d4092383c4b
 }
