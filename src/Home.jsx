@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from "react";
 import Header from './Header';
 import Footer from "./Footer";
@@ -30,17 +29,18 @@ function Home() {
         setStr(prev => prev + char);
       }, 100 * index);
     });
-    setData([...items, ...items]); 
-   
+    setData([...items, ...items]);
   }, []);
 
   return (
     <div className={style.main}>
-      <div className={style.hero}>
-        <Header />
+      <Header />
+
+      <section className={style.hero}>
         <div className={style.heroContent}>
           <div className={style.heroText}>
             <h1 className={style.animatedHeading}>{str}</h1>
+            <p className={style.tagline}>Explore the taste of India’s favorite dishes</p>
             <button onClick={() => navigate("/Menu")} className={style.menuButton}>
               View Menu
             </button>
@@ -48,42 +48,40 @@ function Home() {
           <img
             src="https://png.pngtree.com/thumb_back/fw800/background/20230412/pngtree-food-burger-delicious-background-image_2363210.jpg"
             className={style.heroImg}
-            alt="Delicious Burger"
+            alt="Delicious Food"
           />
         </div>
-      </div>
+      </section>
 
-      <div className={style.bestSellerSection}>
+      <section className={style.bestSellerSection}>
         <h2 className={style.bestSellerTitle}>🍽️ Our Best Sellers</h2>
-        <div className={style.carousel}>
-          {data.map((item, index) => (
-            <div className={style.card} key={index}>
-              <img src={item.img} className={style.cardImg} alt={item.name} />
-              <h3 className={style.cardTitle}>{item.name}</h3>
-            </div>
-          ))}
+        <div className={style.carouselWrapper}>
+          <div className={style.carousel}>
+            {data.map((item, index) => (
+              <div className={style.card} key={index}>
+                <img src={item.img} className={style.cardImg} alt={item.name} />
+                <h3 className={style.cardTitle}>{item.name}</h3>
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
-      <div className="About">
-  <h2>Why Choose Us</h2>
-  <div className="about-content">
-    <p>
-      Serving delicious memories for over <strong>10 years</strong>, our restaurant has built a reputation for providing not just meals, but experiences. 
-    </p>
-    <p>
-      We are known for our:
-      <ul>
-        <li>✨ High-quality, fresh ingredients</li>
-        <li>👨‍🍳 Expert chefs with years of culinary mastery</li>
-        <li>🛎️ Outstanding customer service</li>
-        <li>🏆 Recognized for hygiene and hospitality standards</li>
-      </ul>
-    </p>
-    <p>
-      Whether you're here for a quick bite or a family celebration, we promise to serve food that brings joy to your tastebuds.
-    </p>
-  </div>
-</div>
+      </section>
+
+      <section className={style.aboutSection}>
+        <h2>Why Choose Us</h2>
+        <div className={style.aboutContent}>
+          <p>
+            Serving delicious memories for over <strong>10 years</strong>, our restaurant is known for more than just food.
+          </p>
+          <ul>
+            <li>🥗 Fresh & premium ingredients</li>
+            <li>👨‍🍳 Expert chefs and innovative recipes</li>
+            <li>💯 Unmatched hygiene and service</li>
+            <li>🎉 Perfect for families, friends & celebrations</li>
+          </ul>
+          <p>Experience food that satisfies not just your hunger, but your soul.</p>
+        </div>
+      </section>
 
       <Footer />
     </div>
@@ -91,4 +89,3 @@ function Home() {
 }
 
 export default Home;
-

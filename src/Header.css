@@ -1,101 +1,96 @@
+/* Reset margin and padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .headerWrapper {
+  width: 100%;
+  padding: 15px 30px;
+  background: linear-gradient(to right, #ff512f, #dd2476);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 3rem;
-  background-color: #fff;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   position: sticky;
   top: 0;
   z-index: 1000;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  color: white;
 }
 
-.container5 {
+.logoSection {
   display: flex;
   align-items: center;
+  gap: 10px;
+}
+
+.logoImg {
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.logoText {
+  font-size: 1.5rem;
+  font-weight: 700;
+  font-family: 'Segoe UI', sans-serif;
 }
 
 .navLinks {
-  list-style: none;
   display: flex;
-  margin-left: 30px;
-  gap: 20px;
+  gap: 30px;
 }
 
-.navLinks li {
-  height: 30px;
-  width: 70px;
-  border: 2px solid black;
-  border-radius: 20px;
-  color: red;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.navLinks li a {
+.navItem {
   text-decoration: none;
-  color: black;
-  font-weight: 600;
-  display: block;
-  width: 100%;
-  height: 100%;
-  line-height: 30px;
-  text-align: center;
-  border-radius: 20px;
+  font-weight: 500;
+  color: white;
+  position: relative;
+  padding: 6px 10px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
 }
 
-.navLinks li:hover {
-  background-color: #ff4d4d;
+.navItem:hover,
+.navItem.active {
+  background-color: rgba(255, 255, 255, 0.2);
 }
 
-.container7 {
+.authSection {
   display: flex;
   align-items: center;
+  gap: 10px;
 }
 
 .authLinks {
-  list-style: none;
   display: flex;
   gap: 15px;
 }
 
-.authLinks li a {
+.authBtn {
   text-decoration: none;
-  color: #0077cc;
+  color: white;
   font-weight: 600;
+  border: 2px solid white;
   padding: 6px 12px;
   border-radius: 6px;
-  transition: background 0.3s, color 0.3s;
-  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
-.authLinks li a:hover {
-  background-color: #0077cc;
-  color: white;
+.authBtn:hover {
+  background-color: white;
+  color: #dd2476;
 }
 
-.authLinks li a.active-auth {
-  background-color: #0077cc;
-  color: white;
-}
-
-.logBox {
-  height: 70px;
-  width: 70px;
-  border-radius: 50%;
-  border: 2px solid black;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #ddd;
-  margin-right: 10px;
-  cursor: pointer;
-}
-
-.userInfo {
+.userBox {
   display: flex;
   align-items: center;
+  gap: 12px;
+}
+
+.userName {
   font-weight: 600;
+  color: white;
 }
-

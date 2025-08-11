@@ -13,6 +13,11 @@ export const counrSlice = createSlice({
     },
     removeItem: (state, action) => {
       const index = state.cards.findIndex((ca) => ca.id === action.payload);
+      if(index==-1)
+      {
+       alert("This item is not in the cart.");
+        return;
+      }
       if (index !== -1) {
         state.tot -= state.cards[index].price;
         state.cards.splice(index, 1);

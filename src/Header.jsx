@@ -1,60 +1,59 @@
-
 import React, { useState, useEffect } from 'react';
-import { NavLink } from 'react-router-dom';
-import "./Header.css";
+import { NavLink, useNavigate } from 'react-router-dom';
 import { Person } from '@mui/icons-material';
-import { Button } from '@mui/material';
+import { Button, Avatar } from '@mui/material';
+import './Header.css';
+
 function Header() {
-  const [user, setUser] = useState("");
+  const [user, setUser] = useState('');
+  const navigate = useNavigate();
 
   useEffect(() => {
-    const userdata = sessionStorage.getItem("username");
+    const userdata = sessionStorage.getItem('username');
     if (userdata) setUser(userdata);
   }, []);
-const logoutfun=()=>{
-  setUser('');
-  sessionStorage.clear();
-}
+
+  const logoutfun = () => {
+    setUser('');
+    sessionStorage.clear();
+    navigate('/');
+  };
+
   return (
-    <div className="headerWrapper">
-      <div className="container5">
-        <img 
-          src="https://thumbs.dreamstime.com/z/hotel-logo-template-background-58362974.jpg" 
-          height="100px" 
-          width="100px" 
-          alt="Logo" 
+    <header className="headerWrapper">
+      <div className="logoSection">
+        <img
+          src="https://thumbs.dreamstime.com/z/hotel-logo-template-background-58362974.jpg"
+          alt="Restaurant Logo"
+          className="logoImg"
         />
-        <ul className="navLinks">
-          <li><NavLink to="/">Home</NavLink></li>
-          <li><NavLink to="/Menu">Menu</NavLink></li>
-          <li><NavLink to="/about">About</NavLink></li>
-            <li><NavLink to="/reviews">Reviews</NavLink></li>
-        </ul>
+        <h1 className="logoText">Foodie's Hub</h1>
       </div>
 
-      <div className="container7">
-        {user?.length ? (
-          <div>
-          <div className="logBox">
-            <Person style={{height:"18px"}}/>
-     
+      <nav className="navLinks">
+        <NavLink to="/" className="navItem">Home</NavLink>
+        <NavLink to="/Menu" className="navItem">Menu</NavLink>
+        <NavLink to="/about" className="navItem">About</NavLink>
+        <NavLink to="/reviews" className="navItem">Reviews</NavLink>
+      </nav>
+
+      <div className="authSection">
+        {user ? (
+          <div className="userBox">
+            <Avatar sx={{ bgcolor: '#ff5722' }}><Person /></Avatar>
+            <span className="userName">{user}</span>
+            <Button variant="contained" size="small" color="error" onClick={logoutfun}>
+              Logout
+            </Button>
           </div>
-          {user}
-          <div>
-<Button onClick={logoutfun}>
-Logout
-</Button>
-            </div>
-          </div>
-            
         ) : (
-          <ul className="authLinks">
-            <li><NavLink to="/login">Login</NavLink></li>
-            <li><NavLink to="/signup">Signup</NavLink></li>
-          </ul>
+          <div className="authLinks">
+            <NavLink to="/login" className="authBtn">Login</NavLink>
+            <NavLink to="/signup" className="authBtn">Signup</NavLink>
+          </div>
         )}
       </div>
-    </div>
+    </header>
   );
 }
 

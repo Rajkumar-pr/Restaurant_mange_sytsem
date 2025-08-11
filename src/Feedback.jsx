@@ -1,8 +1,17 @@
-
 import React, { useState, useEffect } from 'react';
-import { Box, Typography, Rating, TextField, Button, Alert } from '@mui/material';
-import { Link } from "react-router-dom"; // ✅ correct import
-import { blue } from '@mui/material/colors';
+import {
+  Box,
+  Typography,
+  Rating,
+  TextField,
+  Button,
+  Alert,
+  Card,
+  CardContent,
+  Divider
+} from '@mui/material';
+import { Link } from 'react-router-dom';
+import EmojiEmotionsIcon from '@mui/icons-material/EmojiEmotions';
 
 const Feedback = () => {
   const [rating, setRating] = useState(0);
@@ -44,69 +53,79 @@ const Feedback = () => {
   if (showError) {
     return (
       <Box sx={{ display: 'flex', justifyContent: 'center', mt: 10 }}>
-        <Typography variant="h6" color="error">
-          Please login or sign up to give feedback.
-        </Typography>
+        <Alert severity="error">Please login or sign up to give feedback.</Alert>
       </Box>
     );
   }
 
   return (
-    <Box
-      component="form"
-      onSubmit={handleSubmit}
+    <Card
       sx={{
-        maxWidth: 500,
-        margin: '40px auto',
-        padding: 3,
-        border: '1px solid #ddd',
-        borderRadius: 2,
-        boxShadow: 2,
+        maxWidth: 550,
+        mx: 'auto',
+        my: 8,
+        p: 3,
+        borderRadius: 4,
+        boxShadow: 6
       }}
     >
-      <Typography variant="h5" gutterBottom>
-        We value your feedback
-      </Typography>
+      <CardContent>
+        <Box display="flex" alignItems="center" gap={1} mb={2}>
+          <EmojiEmotionsIcon color="primary" />
+          <Typography variant="h5" fontWeight={600}>
+            Share Your Experience
+          </Typography>
+        </Box>
 
-      <Typography variant="subtitle1" sx={{ mb: 1 }}>
-        Rate your experience:
-      </Typography>
+        <Divider sx={{ mb: 3 }} />
 
-      <Rating
-        name="feedback-rating"
-        value={rating}
-        onChange={(event, newValue) => setRating(newValue)}
-        size="large"
-      />
+        <form onSubmit={handleSubmit}>
+          <Typography sx={{ mb: 1 }}>Rate us:</Typography>
 
-      <TextField
-        label="Your message"
-        multiline
-        fullWidth
-        required
-        rows={4}
-        value={message}
-        onChange={(e) => setMessage(e.target.value)}
-        sx={{ my: 3 }}
-      />
+          <Rating
+            name="feedback-rating"
+            value={rating}
+            onChange={(e, newValue) => setRating(newValue)}
+            size="large"
+          />
 
-      <Button type="submit" variant="contained" color="primary" fullWidth>
-        Submit Feedback
-      </Button>
+          <TextField
+            label="Your message"
+            multiline
+            rows={4}
+            fullWidth
+            required
+            sx={{ mt: 3 }}
+            value={message}
+            onChange={(e) => setMessage(e.target.value)}
+          />
 
-      {submitted && (
-        <>
-          <Alert severity="success" sx={{ mt: 2 }}>
-            Thank you for your feedback!
-          </Alert>
-          <Link to="/" style={{ textDecoration: 'none' }}>
-            <Button sx={{ mt: 2, backgroundColor: blue[500] }} variant="contained" fullWidth>
-              Go to Homepage
+          {!submitted && (
+            <Button type="submit" variant="contained" fullWidth sx={{ mt: 3 }}>
+              Submit Feedback
             </Button>
-          </Link>
-        </>
-      )}
-    </Box>
+          )}
+        </form>
+
+        {submitted && (
+          <>
+            <Alert severity="success" sx={{ mt: 3 }}>
+              Thank you for your feedback!
+            </Alert>
+            <Button
+              component={Link}
+              to="/"
+              variant="contained"
+              sx={{ mt: 2 }}
+              fullWidth
+              color="success"
+            >
+              Go to Home
+            </Button>
+          </>
+        )}
+      </CardContent>
+    </Card>
   );
 };
 
